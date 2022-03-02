@@ -1,9 +1,17 @@
+# Dependências:
 from collections import deque
 
+# Função para criptografar o texto passado como argumento.
+#
+# Parâmetros:
+#   input (texto a ser criptografado)
 def criptografar(input):
+    # Conversão do texto para coleção do tipo Deque (permite operação de rotação)
     input = deque(input)
 
+    # Lista com todas as letras do alfabeto para comparar com a chave
     alfabeto   = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    # Chave para realizar a operação de substituição
     chave      = ['d', 'r', 'w', 'l', 'y', 'z', 'f', 'k', 'j', 'o', 'u', 'c', 'n', 'a', 't', 'q', 'i', 'b', 'm', 'x', 'p', 'g', 'v', 'h', 'e', 's']
 
     # Substituição
@@ -37,6 +45,7 @@ def criptografar(input):
                 break
             k = k+1
             
+    # Juntando os elementos da coleção em uma só string para imprimir o resultado
     string = ''
 
     for letra in input:
@@ -44,10 +53,17 @@ def criptografar(input):
 
     return string
 
+# Função para descriptografar o texto criptografado passado como argumento.
+#
+# Parâmetros:
+#   input (texto criptografado a ser descriptografado)
 def descriptografar(input):
+    # Conversão do texto para coleção do tipo Deque (permite operação de rotação)
     input = deque(input)
 
+    # Lista com todas as letras do alfabeto para comparar com a chave
     alfabeto   = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    # Chave para realizar a operação de substituição
     chave      = ['d', 'r', 'w', 'l', 'y', 'z', 'f', 'k', 'j', 'o', 'u', 'c', 'n', 'a', 't', 'q', 'i', 'b', 'm', 'x', 'p', 'g', 'v', 'h', 'e', 's']
 
     # Substituição
@@ -80,7 +96,8 @@ def descriptografar(input):
                 input[i] = alfabeto[k]
                 break
             k = k+1
-            
+
+    # Juntando os elementos da coleção em uma só string para imprimir o resultado        
     string = ''
 
     for letra in input:
