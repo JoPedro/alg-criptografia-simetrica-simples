@@ -105,6 +105,7 @@ def descriptografar(input):
 
     return string 
 
+# Testagem
 input = input()
 
 input_cript = criptografar(input)
